@@ -12,6 +12,6 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 httpx (https://github.com/projectdiscovery/httpx)
 
-# Payloads
+# Some of the Payloads
 
 ![](https://i.imgur.com/RfwGwjS.png)
