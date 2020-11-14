@@ -12,9 +12,16 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 httpx (https://github.com/projectdiscovery/httpx)
 
-# Some of the Payloads
+# Payloads
 
 ![](https://i.imgur.com/RfwGwjS.png)
+
+Along with adding the headers
+```
+X-Forwarded-For: 127.0.0.1
+X-Forwarded-Host: 127.0.0.1
+X-Custom-IP-Authorization: 127.0.0.1
+```
 
 # Reference
 
