@@ -8,9 +8,13 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 `cat urls.txt | 4xxbypass`
 
-# Dependencies
+# Install Instructions
 
-httpx (https://github.com/projectdiscovery/httpx)
+1- Install httpx if not already installed from (https://github.com/projectdiscovery/httpx)
+
+2- `curl https://raw.githubusercontent.com/Raywando/4xxbypass/main/4xxbypass > /usr/bin/4xxbypass`
+
+3- `chmod +x /usr/bin/4xxbypass`
 
 # Payloads
 
@@ -22,6 +26,10 @@ X-Forwarded-For: 127.0.0.1
 X-Forwarded-Host: 127.0.0.1
 X-Custom-IP-Authorization: 127.0.0.1
 ```
+
+# PoC
+
+![](https://i.imgur.com/jmdkfl1.gif)
 
 # Reference
 
