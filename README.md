@@ -8,7 +8,7 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 `cat urls.txt | 4xxbypass`
 
-# Install Instructions
+# Installation
 
 1- Install httpx if not already installed from (https://github.com/projectdiscovery/httpx)
 
