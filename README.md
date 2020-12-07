@@ -8,6 +8,10 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 `cat urls.txt | 4xxbypass`
 
+# PoC
+
+![](https://i.imgur.com/jmdkfl1.gif)
+
 # Installation
 
 1- Install httpx if not already installed from (https://github.com/projectdiscovery/httpx)
@@ -26,10 +30,6 @@ X-Forwarded-For: 127.0.0.1
 X-Forwarded-Host: 127.0.0.1
 X-Custom-IP-Authorization: 127.0.0.1
 ```
-
-# PoC
-
-![](https://i.imgur.com/jmdkfl1.gif)
 
 # Reference
 
