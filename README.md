@@ -8,7 +8,7 @@ A tool that automates a number of well-known 403/401 bypassing techniques.
 
 `cat urls.txt | 4xxbypass`
 
-# PoC
+# Proof of Concept
 
 ![](https://i.imgur.com/jmdkfl1.gif)
 
